@@ -22,13 +22,13 @@ class OsLocationProvider(val name: String, val properties: ProviderProperties?, 
             val name = if (priority == LocationRequest.PRIORITY_NO_POWER) {
                 LocationManager.PASSIVE_PROVIDER
             } else {
-                LocationManager.GPS_PROVIDER
+                LocationManager.FUSED_PROVIDER
             }
             return get(client, name, granularity)
         }
 
         fun get(client: Client, granularity: Int): OsLocationProvider {
-            val name = LocationManager.GPS_PROVIDER
+            val name = LocationManager.FUSED_PROVIDER
             return get(client, name, granularity)
         }
 
