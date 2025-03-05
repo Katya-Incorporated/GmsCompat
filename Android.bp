@@ -5,7 +5,6 @@ android_app {
         "src/**/*.java",
         "src/**/*.kt",
         "src/**/*.aidl",
-        ":LocationFudger-sources",
     ],
     aidl: {
         local_include_dirs: ["src"],
