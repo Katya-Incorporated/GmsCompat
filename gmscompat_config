@@ -128,16 +128,16 @@ setPairingConfirmation default
 setSilenceMode default
 
 [android.bluetooth.BluetoothHapClient]
-registerCallback void
-unregisterCallback void
+registerCallback default
+unregisterCallback default
 
 [android.bluetooth.BluetoothLeAudio]
-registerCallback void
-unregisterCallback void
+registerCallback default
+unregisterCallback default
 
 [android.bluetooth.BluetoothLeBroadcast]
-registerCallback void
-unregisterCallback void
+registerCallback default
+unregisterCallback default
 
 [android.bluetooth.BluetoothLeBroadcastAssistant]
 registerCallback void
