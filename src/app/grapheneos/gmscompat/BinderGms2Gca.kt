@@ -22,6 +22,7 @@ import android.os.SystemClock
 import android.provider.Settings
 import android.util.ArrayMap
 import android.util.Log
+import androidx.core.content.edit
 import app.grapheneos.gmscompat.GmsCompatConfigParser.configHolderInfo
 import com.android.internal.gmscompat.GmsCompatConfig
 import com.android.internal.gmscompat.GmsHooks
@@ -552,5 +553,18 @@ object BinderGms2Gca : IGms2Gca.Stub() {
 
     override fun maybeShowGmsCoreRestrictedBackgroundDataNotif() {
         Notifications.handleGmsCoreRestrictedBackgroundDataNotif()
+    }
+
+    override fun getLastBroadcastConfigVersion(): Long {
+        return App.preferences().getLong(App.MainProcessPrefs.LAST_BROADCAST_CONFIG_VERSION, 0);
+    }
+
+    override fun setLastBroadcastConfigVersion(lastVersion: Long) {
+        if (config?.version != lastVersion) {
+            Log.w(TAG, "setLastBroadcastConfigVersion: lastVersion $lastVersion different from config.version=${config?.version}")
+        }
+        App.preferences().edit {
+            putLong(App.MainProcessPrefs.LAST_BROADCAST_CONFIG_VERSION, lastVersion)
+        }
     }
 }

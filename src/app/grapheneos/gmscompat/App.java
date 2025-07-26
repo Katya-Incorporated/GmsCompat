@@ -75,5 +75,6 @@ public class App extends Application {
         String GmsCore_POWER_EXEMPTION_PROMPT_DISMISSED = "GmsCore_power_exemption_prompt_dismissed_2";
         String GmsCore_BACKGROUND_DATA_EXEMPTION_PROMPT_DISMISSED = "GmsCore_background_data_exemption_prompt_dismissed";
         String NOTIFICATION_DO_NOT_SHOW_AGAIN_PREFIX = "do_not_show_notification_";
+        String LAST_BROADCAST_CONFIG_VERSION = "last_broadcast_config_version";
     }
 }
